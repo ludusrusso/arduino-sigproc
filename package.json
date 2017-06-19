@@ -4,7 +4,7 @@
   "description": "Arduino SigProc is a didactic tool to learn in an easy way signal processing using Arduino",
   "main": "app.ts",
   "scripts": {
-    "test": "mocha tests",
+    "test": "tsc tests/*.ts && mocha tests/",
     "start": "electron main.ts"
   },
   "repository": {
@@ -24,8 +24,11 @@
   },
   "homepage": "https://github.com/ludusrusso/arduino-sigproc#readme",
   "devDependencies": {
+    "chai": "^4.0.2",
     "electron": "^1.6.11",
     "electron-prebuilt-compile": "^1.6.11",
+    "expect.js": "^0.3.1",
+    "source-map-support": "^0.4.15",
     "spectron": "^3.6.4",
     "testing": "^1.1.1",
     "typescript": "^2.3.4"
