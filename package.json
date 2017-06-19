@@ -1,0 +1,30 @@
+{
+  "name": "arduino-sigproc",
+  "version": "0.0.1",
+  "description": "Arduino SigProc is a didactic tool to learn in an easy way signal processing using Arduino",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ludusrusso/arduino-sigproc.git"
+  },
+  "keywords": [
+    "Arduino",
+    "Signal",
+    "Processing",
+    "Math"
+  ],
+  "author": "Ludovico O. Russo",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ludusrusso/arduino-sigproc/issues"
+  },
+  "homepage": "https://github.com/ludusrusso/arduino-sigproc#readme",
+  "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-prebuilt-compile": "^1.6.11",
+    "typescript": "^2.3.4"
+  }
+}
