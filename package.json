@@ -32,5 +32,9 @@
     "spectron": "^3.6.4",
     "testing": "^1.1.1",
     "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "arduino-firmata": "^0.3.4",
+    "smoothie": "^1.29.1"
   }
 }

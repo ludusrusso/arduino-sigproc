@@ -30,9 +30,4 @@ describe('application launch', function () {
       return this.app.client.browserWindow.getTitle().then(text => expect(text).to.equal('Arduino SignalProc'));
     });
   });
-
-
-
-  // check the title of the windows
-  //
 });
