@@ -4,7 +4,12 @@ import { SmoothieChart, TimeSeries } from 'smoothie'
 var smoothie = new SmoothieChart({responsive: true});
 smoothie.streamTo(document.getElementById("myChart"), 500);
 
+let ft = 'function(x){return 0.2*x;}'
+console.log(ft);
 
+document.getElementById("btn_id").onclick= function() {
+  ft = document.getElementById("code1").value;
+}
 // Data
 var line1 = new TimeSeries();
 var line2 = new TimeSeries();
@@ -43,12 +48,19 @@ class Integral {
 let filter = new Filter(0.9);
 let integral = new Integral(0.9);
 
+function f1(data) {
+  console.log(ft);
+  let filt = eval("("+ft+")");
+  console.log(filt)
+  return filt(data);
+}
+
 setInterval(function() {
   let time = new Date().getTime();
   let data = Math.random()-0.5;
   line1.append(time, data);
   line2.append(time, filter.filter(data));
-  line3.append(time, integral.filter(data));
+  line3.append(time, f1(data));
 }, 300);
 
 // Add to SmoothieChart
