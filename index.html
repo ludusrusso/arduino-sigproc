@@ -2,18 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
+
     <title>Arduino SignalProc</title>
   </head>
   <body>
 
     <canvas id="myChart" style="width:100%; height: 300px" width="1074" height="200"></canvas>
-    <input type="text"
-       cols="40"
-       rows="5"
-       style="width:200px; height:50px;"
-       name="Text1"
-       id="code1"
-       value="" />
+
+    <textarea rows="4" cols="50" id="code_id"></textarea>
 
     <button id="btn_id"> press</button>
     <script>

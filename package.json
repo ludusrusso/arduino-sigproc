@@ -32,6 +32,7 @@
     "typescript": "^2.3.4"
   },
   "dependencies": {
-    "smoothie": "^1.29.1"
+    "smoothie": "^1.29.1",
+    "codemirror":"^5.27.2"
   }
 }

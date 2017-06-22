@@ -1,14 +1,19 @@
 import { SmoothieChart, TimeSeries } from 'smoothie'
-
+import CodeMirror = require('codemirror');
 
 var smoothie = new SmoothieChart({responsive: true});
 smoothie.streamTo(document.getElementById("myChart"), 500);
 
-let ft = 'function(x){return 0.2*x;}'
-console.log(ft);
+let editor = CodeMirror.fromTextArea(document.getElementById('code_id'), {
+  mode:  "javascript",
+  lineNumbers: true,
+});
+editor.setValue("function(x) {\n  return x;\n}");
+
+let ft = editor.getValue();
 
 document.getElementById("btn_id").onclick= function() {
-  ft = document.getElementById("code1").value;
+  ft = editor.getValue();
 }
 // Data
 var line1 = new TimeSeries();
@@ -59,17 +64,12 @@ setInterval(function() {
   let time = new Date().getTime();
   let data = Math.random()-0.5;
   line1.append(time, data);
-  line2.append(time, filter.filter(data));
   line3.append(time, f1(data));
 }, 300);
 
 // Add to SmoothieChart
 smoothie.addTimeSeries(line1, {
   strokeStyle: 'rgba(0, 124, 0, 1)',
-  lineWidth: 4
-});
-smoothie.addTimeSeries(line2, {
-  strokeStyle: 'rgba(125, 0, 0, 1)',
   lineWidth: 4
 });
 
