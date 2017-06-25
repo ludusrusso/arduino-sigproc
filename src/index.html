@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
+
+    <title>Arduino SignalProc</title>
+  </head>
+  <body>
+    <input type="text" id="input_arduino" value="/dev/tty.usbmodem14631"></input>
+    <button id="btn_arduino"> connect </button>
+
+    <canvas id="myChart" style="width:100%; height: 300px" width="1074" height="200"></canvas>
+
+    <textarea style="height:auto" id="code_id"></textarea>
+
+    <button id="btn_id"> press</button>
+    <script>
+    require('./index.ts')
+    </script>
+  </body>
+
+</html>
