@@ -2,10 +2,12 @@
   "name": "arduino-sigproc",
   "version": "0.0.1",
   "description": "Arduino SigProc is a didactic tool to learn in an easy way signal processing using Arduino",
-  "main": "app.ts",
+  "main": "src/main.ts",
   "scripts": {
     "test": "tsc tests/*.ts && mocha tests/",
-    "start": "electron main.ts"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -24,17 +26,50 @@
   },
   "homepage": "https://github.com/ludusrusso/arduino-sigproc#readme",
   "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
     "chai": "^4.0.2",
-    "electron": "^1.6.11",
-    "electron-prebuilt-compile": "^1.6.11",
+    "electron-forge": "^3.0.5",
+    "electron-prebuilt-compile": "1.6.11",
     "expect.js": "^0.3.1",
     "source-map-support": "^0.4.15",
-    "spectron": "^3.6.4",
+    "spectron": "^3.7.1",
     "testing": "^1.1.1",
-    "typescript": "^2.3.4"
+    "typescript": "^2.4.0"
   },
   "dependencies": {
     "arduino-firmata": "^0.3.4",
+    "electron-compile": "^6.4.1",
     "smoothie": "^1.29.1"
+  },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": ""
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": ""
+      }
+    }
   }
 }
